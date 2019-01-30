@@ -1,0 +1,772 @@
+        body{
+            margin: 0px;
+            margin-right: 1px;
+            visibility: visible;
+            -webkit-animation: fadeIn 1000ms;
+            animation: fadeIn 1200ms;
+        }    
+*::-webkit-scrollbar-track 
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+    margin:-1px;
+}
+
+*::-webkit-scrollbar 
+{
+	width: 10px;
+	background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb 
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
+}
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;} 
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1;}
+        }
+         @font-face {
+            font-family: Exo-Light;
+            src: url(../fonts/Exo-Light.otf);
+                }
+        *:not(i,.fa-search){ 
+                    font-family: Calibri!important;
+                    font-weight: 100;
+        }
+        a{
+            text-decoration: none;
+        }
+        .hvr-underline-from-left{
+           -webkit-transform:perspective(1px) translateZ(0);
+           transform:perspective(1px) translateZ(0);
+           box-shadow:0 0 1px transparent;position:relative;overflow:hidden
+        }
+        .hvr-underline-from-left:before{
+            content:"";
+            position:absolute;
+            z-index:-1;left:0;
+            right:100%;bottom:0;
+            background:rgba(236, 236, 236, 0.51);
+            height:.3em;-webkit-transition-property:right;
+            transition-property:right;-webkit-transition-duration:.3s;
+            transition-duration:.3s;-webkit-transition-timing-function:cubic-bezier(0, 0, .57, .11);transition-timing-function:ease-out
+        }
+        .hvr-underline-from-left:active:before,.hvr-underline-from-left:focus:before,.hvr-underline-from-left:hover:before{right:0}
+        .selectme{
+            width: 26.4%;height: 35px;
+            margin-top: 10px;margin-left: 40px;
+            border: 1px solid #e7eaee;
+            font-size: 14pt;
+            font-family: calibri;
+            color: #828181;   
+            cursor:pointer;
+            background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+        }
+        .selectme:after{ 
+    content:'<>';
+    font:11px "Consolas", monospace;
+    color:#000;
+            z-index: 5;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    right:8px; top:2px; 
+    border-bottom:1px solid #ddd;
+    position:absolute;
+        }
+        .selectme select{
+        padding: 5px 8px;
+        width: 130%;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+        }
+        #TopBar{
+            height: 55px;
+            width: 100%;
+        }
+         #TopBar>a>img{
+             height: 90%;
+             margin-left: 10px;
+             margin-top: 2px;
+         }
+ 
+
+         #TopBar #Connecter{
+             display:flex;
+             float:right;
+             line-height: 55px;
+             margin-right: 37px;
+             font-size:14pt;
+             color: #d81a38;
+             font-family:Calibri;
+             font-weight:500;
+         }
+         #Actualite{
+	           position:relative;
+             padding-top: 5px;
+             height: 30px;
+             padding-bottom:5px;
+             line-height: 30px;
+                width: 100%;
+            background-color: #d81a38;
+	       display:flex;         
+}
+         #Actualite>a{
+             margin-left: 10px;
+            margin-right:10px;
+            color: white;
+            font-size: 15pt;
+            font-family: Exo-Light;
+         }
+         #Actualite>div{
+             display:inline-block;
+         }
+         #Actualite>div>i{
+             color: white;
+             line-height: 30px;
+            font-size: 16pt;
+            margin-left: 10px;
+        }
+
+        .Rmullti{
+            font-size: 14pt;
+            font-family: calibri;
+            color: #828181;
+        }
+        .searchBox #searchfield{
+            padding-left:20px;
+            width: 26.4%;height: 35px;
+            margin: -10px 0 20px 0;margin-left: 55px;
+            border: 1px solid #e7eaee;
+            font-size: 14pt;
+            font-family: calibri;
+            color: #828181;
+        }
+        .searchBox a{
+            background-color: #d81a38;
+            color: white;
+            text-align: center;
+            width: 39.3px;
+            height: 39.3px;
+            line-height: 38px;
+            text-decoration: none;
+            font-size: 15pt;
+        }
+        marquee{
+            display: inline-block !important;
+            width: 87%;
+            color: white;
+            border-left:2px solid rgba(184, 14, 42, 0.678);
+            padding-left: 10px;
+
+        }
+        .row{ 
+            width: 96%;
+            height: 40% ;
+            margin: 10px auto;
+            
+            margin-left:    55px!important;
+            background-color:transparent;
+        }
+        .row:last-of-type{
+            width: 94.4%;
+            height:200px ;
+            margin: 0px auto;
+            margin-bottom:80px ;
+            display: inline-block;
+            margin-left:    55px!important;
+            background-color:transparent;
+        }
+        .row:last-of-type div{
+            float: left;
+        }
+        
+        .row:last-of-type .SApp .icon i{ 
+            padding:37px 64px;
+            font-size: 70px;
+        }
+        .SApp{
+            cursor: pointer;
+            background-color: purple;
+            width: 200px;
+            height:200px;
+            display: inline-block;
+            margin: 0 5px 0 0;
+        } 
+        .SApp .icon i{ 
+            padding:37px 67px;
+            font-size: 70px;
+        }
+        *{
+            font-family: Exo-Light;  }
+        .title{
+            margin-top: 9px!important;
+            font-family: Exo-Light;  
+        }
+        .SApp .title{  
+           margin: -7px 7px;
+            padding:0px ;
+            height: 20px;
+            font-size: 23px;
+            color:snow;
+        }
+        .LApp{
+            cursor: pointer;
+            background-color: purple;
+            width: 410px;
+            height:200px;
+            display: inline-block;
+            margin: 0 5px 0 0;
+        }
+        .LApp .title{
+            margin: -7px 7px;
+            padding:0px ;
+            height: 20px;
+            font-size: 23px;
+            color:snow;
+        }
+        .LApp .icon i{ 
+            padding:37px 174px;
+            font-size: 70px;
+        }
+        i{
+            color:snow; 
+            font-family: fantasy,Sans-Serif;
+         }
+        .XApp{ 
+            cursor: pointer;
+            background-color: purple;
+            width: 619px;
+            height:200px; 
+            padding:inherit;
+            margin: 0px 8px 0 4px!important;
+        }
+        .XApp div{   
+            padding-top:80px 0;
+            display: inline-table;
+        }
+        .XApp .icon{   
+            background:  rgba(15, 15, 33, 0.89);
+            padding: 32px;
+        }
+        .XApp .icon i{  
+            padding:30px ;
+            font-size: 76px;
+        }
+        .XApp .title{ 
+            margin: 7px 7px;
+            padding:73px  0 0 40px;
+            height: 20px;
+            font-size: 23px;
+            color:snow;
+        }
+        footer {
+            background-color:#d81a38 ;
+            width: 100%;
+            height: 70px;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+          }
+          
+        
+        footer div{
+            display: inline-flex;
+            width:40%;
+            margin:-10px 2.5%;
+             border-top:1px solid snow ;
+             border-bottom:1px solid snow ; 
+        }
+        footer div:first-of-type{
+             margin-left: 4%;
+        }
+         footer div span{
+            cursor: pointer;
+             justify-content: space-between;
+             padding:8px 10px;
+             line-height: 20px;
+            width:160px;
+            margin:0 2%;
+             font-size: 14px;
+             color: snow;
+        }
+        footer img{
+            cursor: pointer;
+            margin: -31px auto;
+            position: sticky;
+            left: 30%;
+            width: 100px;
+            height: auto;
+        }
+
+        @media (max-width: 1300px){
+           
+        .searchBox #searchfield{
+            padding-left:20px;
+            width: 26.4%;height: 35px;
+            margin: -10px 0 20px 0;margin-left: 55px;
+            border: 1px solid #e7eaee;
+            font-size: 14pt;
+            font-family: calibri;
+            color: #828181;
+        }
+            .row:first-of-type
+            {
+                margin: 50px!important;
+            }
+            .row:last-of-type{
+                margin-top: 10px!important;
+            }
+            
+        .SApp{
+            cursor: pointer;
+            background-color: purple;
+            width: 198px;
+            height:198px;
+            display: inline-block;
+            margin: 0 5px 0 0;
+        } 
+         .SApp .icon i{ 
+            padding:37px 67px;
+            font-size: 70px;
+        } 
+         .SApp .title{  
+           margin: -25px 7px 0 7px ;
+            padding:0px ;
+            height: 20px;
+            font-size: 19px;
+            color:snow;
+        }  
+        .LApp{
+            cursor: pointer;
+            background-color: purple;
+            width: 320px;
+            height:200px;
+            display: inline-block;
+            margin: 0 5px 0 0;
+        }
+           .row:last-of-type .LApp{
+            width: 315px!important;
+            }
+        .LApp .title{
+            margin: -7px 7px;
+            padding:0px ;
+            height: 20px;
+            font-size: 23px;
+            color:snow;
+        }
+        .LApp .icon i{ 
+            padding:37px 134px;
+            font-size: 70px;
+        }
+            body{
+                height: 100%;
+            }
+         footer {
+             position: sticky;
+             bottom: 1;
+             /* color bckd 81a38  */
+          background-color:#d81a38 ;
+        margin:62px 0 0 0;
+            padding:0;
+          width: 100%;
+          height: 69.3px;
+          z-index: 2;
+        }
+            .card{width: 280px!important;}
+        footer div{
+            display: inline-flex;
+            width:39%;
+            margin:-10px 2%;
+             border-top:1px solid snow ;
+             border-bottom:1px solid snow ; 
+        }
+        footer div:first-of-type{
+             margin-left: 2%;
+            width:40%;
+        }
+         footer div span{
+            cursor: pointer;
+             justify-content: space-between;
+             padding:8px 5px;
+             line-height: 20px;
+            width:160px;
+            margin:0 2%;
+             font-size: 13.4px;
+             color: snow;
+        }
+            select{
+                width:8%!important;
+            }
+        }
+@media (max-width: 1270px){
+           
+        .searchBox #searchfield{
+            padding-left:20px;
+            width: 26.4%;height: 35px;
+            margin: -10px 0 20px 0;margin-left: 55px;
+            border: 1px solid #e7eaee;
+            font-size: 14pt;
+            font-family: calibri;
+            color: #828181;
+        }/*
+            .row:first-of-type
+            {
+                margin-left: -10!important;
+            }
+            .row:last-of-type{
+                margin-left: 0!important;
+            }*/
+            
+            .LApp,.SApp{
+            cursor: pointer;
+            background-color: purple;
+            width: 200px;
+            height:200px;
+            display: inline-block;
+            margin: 0 5px 0 0;
+        } 
+        .LApp .icon i,.SApp .icon i{ 
+            padding:37px 67px;
+            font-size: 70px;
+        } 
+        .LApp .title,.SApp .title{  
+           margin: -27px 7px 0 7px ;
+            padding:0px ;
+            height: 20px;
+            font-size: 18.5px;
+            color:snow;
+        }
+            
+         footer {
+             /* color bckd 81a38  */
+          background-color:#d81a38 ;
+        margin:62px 0 0 0;
+            padding:0;
+          width: 100%;
+          height: 69.3px;
+          z-index: 2;
+        }
+        
+        footer div{
+            display: inline-flex;
+            width:39%;
+            margin:-10px 2%;
+             border-top:1px solid snow ;
+             border-bottom:1px solid snow ; 
+        }
+        footer div:first-of-type{
+             margin-left: 2%;
+            width:40%;
+        }
+         footer div span{
+            cursor: pointer;
+             justify-content: space-between;
+             padding:8px 5px;
+             line-height: 20px;
+            width:160px;
+            margin:0 2%;
+             font-size: 13.4px;
+             color: snow;
+        }
+            select{
+                width:8%!important;
+            }
+        }
+        @media (max-width: 880px){
+            header div:last-of-type{
+                display:none;
+            }
+            .SApp,.LApp,.XApp{
+            cursor: pointer;
+            background-color: purple;
+            width: 200px;
+            height:200px;
+            display: inline-block;
+            margin: 0 5px 0 0;
+        } 
+        .XApp .icon i,.LApp .icon i,.SApp .icon i{ 
+            padding:37px 67px;
+            font-size: 70px;
+        } 
+        .title{
+            margin-top: -4px!important;
+            font-family: Exo-Light;  
+        }
+        .XApp .title,.LApp .title,.SApp .title{  
+           margin: -7px 7px;
+            padding:0px ;
+            height: 20px;
+            font-size: 23px;
+            color:snow;
+        }
+        }
+        @media (max-width: 480px){
+    body{
+        max-width: 480px;
+        padding:0;
+        margin:0;
+            }
+             #Topbar
+            {
+                max-width:270px!important;
+            }>img{
+                 width:50px!important;
+                margin-left: -20px;
+            }
+            #Connecter{
+                margin:auto;
+            }
+            header div:last-of-type{
+                display:none;
+            }
+.saut{
+display:none;}    
+        .SApp,.LApp,.XApp{
+            cursor: pointer;
+            background-color: purple;
+            width: 200px;
+            height:200px;
+            display: inline-block;
+            margin: 0 5px 0 0;
+        } 
+        .XApp .icon i,.LApp .icon i,.SApp .icon i{ 
+            padding:37px 67px;
+            font-size: 70px;
+        } 
+        .title{
+            margin-top: -4px!important;
+            font-family: Exo-Light;  
+        }
+        .XApp .title,.LApp .title,.SApp .title{  
+           margin: -7px 7px;
+            padding:0px ;
+            height: 20px;
+            font-size: 23px;
+            color:snow;
+        }
+        }
+        @media (max-width: 320px){
+.saut{
+display:none;}
+    html{
+        max-width: 480px;
+        padding: 0 25px;
+    }
+    .login-heading img{
+    display: block;
+    margin: 10px     auto;
+  width: 270px;
+  color: white; 
+}
+     *{
+        width: 270px;
+        margin: auto;    
+        }
+} 
+.underC{
+    content: "";
+    display: flex;
+    height:120%;
+    background-image: url('../img/constbk.png');
+    background-repeat: repeat;
+    background-size: 60px 60px;  
+}
+.underC p{  
+    margin:200px auto; 
+    color:snow;
+    font-weight: 500;
+    font-size: 4.5em;
+    text-shadow: 0 0 30px grey;
+}
+.event{  
+    margin: 20px auto 40px auto;
+    height: 700px; /* Full height */  
+    display: block;
+    padding: 0px;
+}
+.event .details{
+    border: 4px solid #D81A38
+        ;
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+    border-bottom: 0;
+    overflow-y:scroll;
+    display: flex;
+    width: 100%; 
+    background-color: white; /* Black w/ opacity */
+    height: 600px;
+
+}
+.event .outils{
+    border: 4px solid #D81A38;
+    border-bottom: 0;
+    width: 100%; 
+    border-top:1px solid white; /* Black w/ opacity */
+    height: 170px;
+    background-color:  white;
+}
+.outils p{
+    background-color:   #D81A38; /* Black w/ opacity */
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
+    color:  rgba(255, 255, 255, 1);
+    font-weight: 300;
+    line-height: 40px;
+    width: 100%;
+}
+.outils a{
+    text-decoration: none;
+    color:snow;
+}
+.outils div{
+    
+    margin:0 auto;
+    display:flex;
+}
+.outils div>div{    
+}
+.outils div>div>img{  /* Black w/ opacity */ 
+    cursor: pointer; 
+    justify-content: space-between;  
+    margin-top: 2px;  
+    height:65px;   
+}
+
+/*
+<div class='details'>
+            <div class="right">
+                    <div class='date'> 
+                </div>
+                <div class='titre'>
+                </div>
+                <div class='Commentaires'>
+                </div>
+        </div>
+            <div class='left'>
+
+                    <div class=''>
+                    </div>
+            </div> 
+*/
+
+/* scroll bar css*/
+
+.details::-webkit-scrollbar-track 
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+    margin:-1px;
+}
+
+.details::-webkit-scrollbar 
+{
+	width: 10px;
+	background-color: transparent;
+}
+
+.details::-webkit-scrollbar-thumb 
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
+}
+
+/*end */
+.details{
+    display: inline-block;
+} 
+.details .left{ 
+    background-size: 300px 6460px;
+    background-repeat: repeat;
+    width:61.8034%; 
+    float: left; 
+    padding:7px;
+    height: 1000px;
+    border-right:1px solid white; 
+}
+.details .right{
+    width:38.1966%;
+    padding:7px; 
+    height: 1000px;
+    float: right;
+    background:   rgba(216, 26, 56, 8);
+
+}
+.details .left .date{
+    color:rgb(151, 12, 35); 
+    width:100%;
+    display: inline-block;
+    padding-left: 7px;
+    line-height: 43px; 
+    font-size: 18px!important;
+    font-weight: 600;
+}
+.details .left .date>img{
+    width: 43px;
+    float: left;
+    display: inline-block;
+    height: auto;
+    background-repeat: no-repeat;
+}
+.details .left .date>h3{ 
+    padding-top: 10px;
+    height: auto; 
+    float: left;
+}
+.titre h2{
+    color:#000/*#fafbfc*/;
+    font-weight: 700;
+    padding-top: 10px;
+}
+.details .left .Commentaires>p {
+    color:#000;
+    width:96%;
+    padding: 1.4% 1% 0 1% ; 
+    line-height: 34px; 
+    font-size: 18px!important;
+    font-weight: 700;
+} 
+ 
+dt{  
+ background:  linear-gradient(to right,rgba(255, 255, 255, .9),rgba(216, 26, 56, .4),rgba(216, 26, 56, .5));
+    font: bold 18px/31px Helvetica, Arial, sans-serif;
+  margin: 0;
+    border-left: 2px solid rgb(151, 12, 35); 
+  position: -webkit-sticky;
+  position: sticky;
+    top:-1px;
+    width: 99%; 
+    color:rgb(151, 12, 35); 
+    padding-left: 10px;
+}
+dd {
+    margin-top: 10px !important;
+    margin-left: 10px!important;
+  background: transparent;
+  font: normal 18px Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0 0 0 12px;
+  color: #FFF;
+
+}
+

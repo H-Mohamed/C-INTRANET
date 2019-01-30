@@ -1,0 +1,163 @@
+@font-face {
+  font-family: TenorSans;
+  src: url(../fonts/TenorSans.ttf);
+}
+html {
+  padding-top:5%;
+  background: linear-gradient(227deg, #ffffff, #6A82FB , #bc4e9c ,#f80759 ,#c31515 );
+  background-size: 100% 500%;
+  -webkit-animation: bck-Mohamed  19s ease infinite;
+  -moz-animation: bck-Mohamed  19s ease infinite;
+  animation: bck-Mohamed  19s ease infinite;
+  font-family: "TenorSans", sans-serif;
+}
+
+.container {
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 50px !important;
+}
+.login {
+  width: 450px;
+  margin: 0 auto;
+  background-color: white;
+  height: 400px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.login-heading {
+  margin-top: 10px !important;
+  font: 1.8em/48px "TenorSans", sans-serif;
+  color: white;
+
+}
+.login-heading img{
+    display: block;
+    margin: 30px     auto;
+  width: 370px;
+
+  color: white; 
+}
+.input-txt {
+  width: 100%;
+  padding: 20px 10px;
+  background: rgb(236, 240, 241);
+  border-top-right-radius: 15px;
+    border: none;
+  font-size: 1em;
+  color: rgb(121, 121, 121);
+  border-bottom: 2px solid rgba(250, 250, 250, 0.4);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: background-color 0.5s ease-in-out;
+  -o-transition: background-color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+.input-txt:last-of-type{
+  margin-top: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+}
+.input-txt:-moz-placeholder {
+  color: #81aac9;
+}
+.input-txt:-ms-input-placeholder {
+  color: #81aac9;
+}
+.input-txt::-webkit-input-placeholder {
+  color: #81aac9;
+}
+
+.login-footer {
+  margin: 10px 0;
+  overflow: hidden;
+  float: left;
+  width: 100%;
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 5.5px;
+  color: white;
+    border: none;
+  font: 0.7em/20px calibri;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(227deg, #6A82FB  ,#f80759);
+    background-size: 800% 800%;
+    -webkit-animation:bck-Mohamed  19s ease infinite;
+    -moz-animation: bck-Mohamed  19s ease infinite;
+    animation: bck-Mohamed  19s ease infinite;
+    font-family: "TenorSans", sans-serif;
+}
+@media (max-width: 480px){
+    html{
+        max-width: 480px;
+        padding: 0 55px;
+    }
+    .login-heading img{
+    display: block;
+    margin: 10px     auto;
+  width: 370px;
+  color: white; 
+}
+     *{
+        width: 370px;
+        margin: auto;    
+        }
+}
+@media (max-width: 320px){
+    html{
+        max-width: 320px;
+        padding: 0 25px;
+    }
+    .login-heading a img{
+    display: block;
+    margin: 10px     auto;
+  width: 270px;
+  color: white; 
+}
+     *{
+        width: 270px;
+        margin: auto;    
+        }
+}
+.btn--right {
+  float: right;
+}
+
+.icon {
+  display: inline-block;
+}
+
+.icon--min {
+  font-size: .9em;
+}
+
+.lnk {
+  font-size: .8em;
+  line-height: 3em;
+  color: rgb(160, 160, 160);
+  text-decoration: none;
+}
+
+
+@-webkit-keyframes bck-Mohamed  {
+    0%{background-position:0% 20%}
+    50%{background-position:100% 81%}
+    100%{background-position:0% 20%}
+}
+@-moz-keyframes bck-Mohamed {
+    0%{background-position:0% 20%}
+    50%{background-position:100% 81%}
+    100%{background-position:0% 20%}
+}
+@keyframes bck-Mohamed  {
+    0%{background-position:0% 20%}
+    50%{background-position:100% 81%}
+    100%{background-position:0% 20%}
+}

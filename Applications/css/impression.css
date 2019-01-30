@@ -1,0 +1,181 @@
+
+header,footer{display: none;} 
+.event{  
+    margin: 20px auto 40px auto;
+    height: 750px; /* Full height */  
+    display: block;
+    padding: 0px;
+}
+.event .details{
+    border: 0px solid rgba(240,52,52, 0.19) ;
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+    border-bottom: 0;
+    overflow-y:scroll;
+    display: flex;
+    width: 100%; 
+    background-color: white; /* Black w/ opacity */
+    height: 800px;
+}
+/*     dddd  d*/
+/*
+.event .outils{
+    border: 4px solid rgba(240,52,52, 0.59);
+    border-bottom: 0;
+    width: 100%; 
+    border-top:1px solid white; /* Black w/ opacity 
+    height: 170px;
+    background-color:  rgba(216, 26, 56, 0.66);
+}
+.outils p{
+    background-color:   rgba(216, 26, 56, 0.66); /* Black w/ opacity 
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
+    color:  rgba(255, 255, 255, 1);
+    font-weight: 300;
+    line-height: 40px;
+    width: 100%;
+}
+.outils a{
+    text-decoration: none;
+    color:snow;
+}
+.outils div{
+    
+    margin:0 auto;
+    display:flex;
+}
+.outils div>div{    
+}
+.outils div>div>img{  /* Black w/ opacity 
+    cursor: pointer; 
+    justify-content: space-between;  
+    margin-top: 2px;  
+    height:65px;   
+}
+
+/*
+<div class='details'>
+            <div class="right">
+                    <div class='date'> 
+                </div>
+                <div class='titre'>
+                </div>
+                <div class='Commentaires'>
+                </div>
+        </div>
+            <div class='left'>
+
+                    <div class=''>
+                    </div>
+            </div> 
+*/
+
+/* scroll bar css*/
+
+.details::-webkit-scrollbar-track 
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+    margin:-1px;
+}
+
+.details::-webkit-scrollbar 
+{
+	width: 10px;
+	background-color: transparent;
+}
+
+.details::-webkit-scrollbar-thumb 
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
+}
+
+/*end */
+.details{
+    display: block;
+} 
+.details .left{ 
+    background-size: 300px 6460px;
+    background-repeat: repeat;
+    width:100%;
+	justify-content: flex-start;
+    padding:7px;
+    height: 600px;
+	z-index: 1;
+    border-right:1px solid white; 
+}
+.details .right{
+    width:100%;
+	justify-content: flex-end;
+    padding:7px; 
+	z-index: 1;
+    height: 100%;
+	
+    background:   rgba(216, 26, 56, 8);
+
+}
+.details .left .date{
+    color:#000;
+    width:100%;
+    display: inline-block;
+    padding-left: 7px;
+    line-height: 43px; 
+    font-size: 18px!important;
+    font-weight: 700;
+}
+.details .left .date>img{
+    width: 43px;
+    float: left;
+    display: inline-block;
+    height: auto;
+    background-repeat: no-repeat;
+}
+.details .left .date>h3{ 
+    padding-top: 10px;
+    height: auto; 
+    float: left;
+}
+.titre h2{
+    color:#000/*#fafbfc*/;
+    font-weight: 700;
+    padding-top: 10px;
+}
+.details .left .Commentaires>p {
+    color:#000;
+    width:96%;
+    padding: 1.4% 1% 0 1% ; 
+    line-height: 34px; 
+    font-size: 18px!important;
+    font-weight: 700;
+} 
+ 
+dt {  
+ background:  linear-gradient(to right,rgba(255, 255, 255, .9),rgba(216, 26, 56, .4),rgba(216, 26, 56, .5));
+    font: bold 18px/31px Helvetica, Arial, sans-serif;
+  margin: 0;
+    border-left: 2px solid black; 
+  position: -webkit-sticky;
+  position: sticky;
+    top:-1px;
+    width: 99%; 
+}
+dd {
+  background: transparent;
+  font: bold 20px/45px Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0 0 0 12px;
+  color: #FFF;
+  white-space: nowrap;
+}
+
+dd + dd {
+  border-top: 1px solid #CCC;
+} 
+.download,.print{
+	display: none;
+}

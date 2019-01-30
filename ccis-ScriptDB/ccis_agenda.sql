@@ -1,0 +1,205 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Apr 09, 2018 at 12:34 AM
+-- Server version: 5.7.19
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `ccis_agenda`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `archive_ev`
+--
+
+DROP TABLE IF EXISTS `archive_ev`;
+CREATE TABLE IF NOT EXISTS `archive_ev` (
+  `LIBELLEDEPARTEMENT` varchar(50) NOT NULL,
+  `IDEVENEMENT` int(11) NOT NULL AUTO_INCREMENT,
+  `LIBELLENATURE` varchar(15) NOT NULL,
+  `LIBELLELIEU` varchar(100) NOT NULL,
+  `LIBELLEVILLE` varchar(15) NOT NULL,
+  `TITREEVENEMENT` varchar(100) NOT NULL,
+  `DATEDEBUTEV` date NOT NULL,
+  `DATEFINEV` date DEFAULT NULL,
+  `HEUREVENEMENT` time NOT NULL,
+  `COMMENTAIRE` varchar(1400) NOT NULL,
+  `IMAGE` longblob,
+  PRIMARY KEY (`IDEVENEMENT`),
+  KEY `FK_Archive_EV_EST_DE_NATURE` (`LIBELLENATURE`),
+  KEY `FK_Archive_VILLE_SITUER_EV` (`LIBELLEVILLE`),
+  KEY `FK_Archive_LIEU_HEBERGEUR_EV` (`LIBELLELIEU`),
+  KEY `FK_Archive_EVENEMENTS_DEP` (`LIBELLEDEPARTEMENT`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `departement`
+--
+
+DROP TABLE IF EXISTS `departement`;
+CREATE TABLE IF NOT EXISTS `departement` (
+  `LIBELLEDEPARTEMENT` varchar(50) NOT NULL,
+  PRIMARY KEY (`LIBELLEDEPARTEMENT`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `departement`
+--
+
+INSERT INTO `departement` (`LIBELLEDEPARTEMENT`) VALUES
+('Departement1'),
+('Departement2'),
+('Departement3'),
+('Departement4');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employe`
+--
+
+DROP TABLE IF EXISTS `employe`;
+CREATE TABLE IF NOT EXISTS `employe` (
+  `MATRICULEEMPLOYE` int(11) NOT NULL AUTO_INCREMENT,
+  `NOMEMPLOYE` varchar(20) NOT NULL,
+  `PRENOMEMPLOYE` varchar(20) NOT NULL,
+  PRIMARY KEY (`MATRICULEEMPLOYE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `em_travaille_dep`
+--
+
+DROP TABLE IF EXISTS `em_travaille_dep`;
+CREATE TABLE IF NOT EXISTS `em_travaille_dep` (
+  `LIBELLEDEPARTEMENT` varchar(50) NOT NULL,
+  `MATRICULEEMPLOYE` int(11) NOT NULL,
+  `DATEBEDUTTRV` date DEFAULT NULL,
+  `DATEFINTRV` date DEFAULT NULL,
+  PRIMARY KEY (`LIBELLEDEPARTEMENT`,`MATRICULEEMPLOYE`),
+  KEY `FK_EM_TRAVAILLE_Matricule` (`MATRICULEEMPLOYE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `evenement`
+--
+
+DROP TABLE IF EXISTS `evenement`;
+CREATE TABLE IF NOT EXISTS `evenement` (
+  `LIBELLEDEPARTEMENT` varchar(50) NOT NULL,
+  `IDEVENEMENT` int(11) NOT NULL AUTO_INCREMENT,
+  `LIBELLENATURE` varchar(15) NOT NULL,
+  `LIBELLELIEU` varchar(100) NOT NULL,
+  `LIBELLEVILLE` varchar(15) NOT NULL,
+  `TITREEVENEMENT` varchar(100) NOT NULL,
+  `DATEDEBUTEV` date NOT NULL,
+  `DATEFINEV` date DEFAULT NULL,
+  `HEUREVENEMENT` time NOT NULL,
+  `COMMENTAIRE` varchar(1400) NOT NULL,
+  `IMAGE` longblob,
+  PRIMARY KEY (`IDEVENEMENT`),
+  KEY `FK_LIEU_HEBERGEUR_EV` (`LIBELLELIEU`),
+  KEY `FK_EVENEMENTS_DEP` (`LIBELLEDEPARTEMENT`),
+  KEY `FK_VILLE_SITUER_EV` (`LIBELLEVILLE`),
+  KEY `FK_EV_EST_DE_NATURE` (`LIBELLENATURE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lieu`
+--
+
+DROP TABLE IF EXISTS `lieu`;
+CREATE TABLE IF NOT EXISTS `lieu` (
+  `LIBELLELIEU` varchar(100) NOT NULL,
+  `LIBELLEVILLE` varchar(15) NOT NULL,
+  PRIMARY KEY (`LIBELLELIEU`),
+  KEY `FK_SETROUVER` (`LIBELLEVILLE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nature_evenement`
+--
+
+DROP TABLE IF EXISTS `nature_evenement`;
+CREATE TABLE IF NOT EXISTS `nature_evenement` (
+  `LIBELLENATURE` varchar(15) NOT NULL,
+  PRIMARY KEY (`LIBELLENATURE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ville`
+--
+
+DROP TABLE IF EXISTS `ville`;
+CREATE TABLE IF NOT EXISTS `ville` (
+  `LIBELLEVILLE` varchar(15) NOT NULL,
+  PRIMARY KEY (`LIBELLEVILLE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `archive_ev`
+--
+ALTER TABLE `archive_ev`
+  ADD CONSTRAINT `FK_Archive_EVENEMENTS_DEP` FOREIGN KEY (`LIBELLEDEPARTEMENT`) REFERENCES `departement` (`LIBELLEDEPARTEMENT`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_Archive_EV_EST_DE_NATURE` FOREIGN KEY (`LIBELLENATURE`) REFERENCES `nature_evenement` (`LIBELLENATURE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_Archive_LIEU_HEBERGEUR_EV` FOREIGN KEY (`LIBELLELIEU`) REFERENCES `lieu` (`LIBELLELIEU`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_Archive_VILLE_SITUER_EV` FOREIGN KEY (`LIBELLEVILLE`) REFERENCES `ville` (`LIBELLEVILLE`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `em_travaille_dep`
+--
+ALTER TABLE `em_travaille_dep`
+  ADD CONSTRAINT `FK_EM_TRAVAILLE_DEP` FOREIGN KEY (`LIBELLEDEPARTEMENT`) REFERENCES `departement` (`LIBELLEDEPARTEMENT`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_EM_TRAVAILLE_Matricule` FOREIGN KEY (`MATRICULEEMPLOYE`) REFERENCES `employe` (`MATRICULEEMPLOYE`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `evenement`
+--
+ALTER TABLE `evenement`
+  ADD CONSTRAINT `FK_EVENEMENTS_DEP` FOREIGN KEY (`LIBELLEDEPARTEMENT`) REFERENCES `departement` (`LIBELLEDEPARTEMENT`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_EV_EST_DE_NATURE` FOREIGN KEY (`LIBELLENATURE`) REFERENCES `nature_evenement` (`LIBELLENATURE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_LIEU_HEBERGEUR_EV` FOREIGN KEY (`LIBELLELIEU`) REFERENCES `lieu` (`LIBELLELIEU`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_VILLE_SITUER_EV` FOREIGN KEY (`LIBELLEVILLE`) REFERENCES `ville` (`LIBELLEVILLE`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `lieu`
+--
+ALTER TABLE `lieu`
+  ADD CONSTRAINT `FK_SETROUVER` FOREIGN KEY (`LIBELLEVILLE`) REFERENCES `ville` (`LIBELLEVILLE`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
